@@ -24,7 +24,9 @@ SECRET_KEY = 'django-insecure-jn=vk$-j519u8srtf#=y+e#imcn-aez)zfhnklu&f5n%^pqv^k
 DEBUG = True
 APPEND_SLASH= False
 
-ALLOWED_HOSTS = ['192.168.0.106']
+ALLOWED_HOSTS = [
+    'https://artwithselfies-api.herokuapp.com/',
+]
 
 
 # Application definition
