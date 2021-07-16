@@ -1,0 +1,20 @@
+.env
+venv2
+
+static/*img/**
+static/*
+!static/arts
+!static/img
+!static/dlib
+
+
+media_root/**
+
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
