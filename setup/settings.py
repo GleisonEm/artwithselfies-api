@@ -25,7 +25,7 @@ DEBUG = True
 APPEND_SLASH= False
 
 ALLOWED_HOSTS = [
-    'https://artwithselfies-api.herokuapp.com/',
+    'artwithselfies-api.herokuapp.com',
 ]
 
 
