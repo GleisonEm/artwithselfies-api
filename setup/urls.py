@@ -37,4 +37,4 @@ urlpatterns = [
     path('image/', image),
     path('imagetest/', imagetest),
     re_path(r'^static/(?P<path>.*)$', views.serve),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
