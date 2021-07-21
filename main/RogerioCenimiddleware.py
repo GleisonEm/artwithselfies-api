@@ -10,7 +10,8 @@ class BaseMiddleware(object):
 
 class ProcessViewNoneMiddleware(BaseMiddleware):
     def process_view(self, request, view_func, view_args, view_kwargs):
-        print(view_func.__name__)
+        if (view_func.__name__ == 'serve'):
+            return None
         myapps = [
             'version1-teste'
         ]
