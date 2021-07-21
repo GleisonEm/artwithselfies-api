@@ -29,12 +29,12 @@ def arts(request):
             {   
                 'id': 1,
                 'description': 'Duas irmãs (no terraço), 1889 - Renoir',
-                'imagelink': 'http://192.168.0.106:8001/static/arts/image9.jpg'
+                'imagelink': 'http://167.99.54.80:8043/media/arts/image9.jpg'
             },
             {   
                 'id': 2,
                 'description': 'Moça com livro, 1899 - Almeida Júnior',
-                'imagelink': 'http://192.168.0.106:8001/static/arts/image8.jpg'
+                'imagelink': 'http://167.99.54.80:8043/media/arts/image8.jpg'
             },
             {
                 'id': 3,
