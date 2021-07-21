@@ -28,12 +28,12 @@ class UploadViewSet(ViewSet):
         file_uploaded = request.FILES.get('file_uploaded')
         # content_type = file_uploaded.content_type
         # im1 = Image.open(file_uploaded)
-        # im1.save('media/img/gleisin-google-4-3.png')
+        # im1.save('static/img/gleisin-google-4-3.png')
         # return auto_rotate(file_uploaded)
         # return Response('test')
         im1 = Image.open(file_uploaded)
-        im1.save('media/img/app-image.png')
-        return process_image('media/img/app-image.png')
+        im1.save('static/img/app-image.png')
+        return process_image('static/img/app-image.png')
         # response = "POST API and you have uploaded a {} file".format(content_type)
         # return Response(response)
 
@@ -57,7 +57,7 @@ def process_image(image_url):
 
     # initialize dlib's face detector (HOG-based) and then create the facial landmark predictor
     detector = dlib.get_frontal_face_detector()
-    predictor = dlib.shape_predictor('media/dlib/shape_predictor_81_face_landmarks.dat')
+    predictor = dlib.shape_predictor('static/dlib/shape_predictor_81_face_landmarks.dat')
 
     # detect faces in the grayscale image
     rects = detector(gray, 1)
@@ -92,17 +92,17 @@ def process_image(image_url):
         out_face[feature_mask] = image[feature_mask]
         # cv2.imshow("mask_inv",  out_face)
         # cv2.waitKey()
-        cv2.imwrite('media/img/out_face2.png', out_face)
+        cv2.imwrite('static/img/out_face2.png', out_face)
 
         response = requests.post(
             'https://api.remove.bg/v1.0/removebg',
-            files={'image_file': open('media/img/out_face2.png', 'rb')},
+            files={'image_file': open('static/img/out_face2.png', 'rb')},
             data={'size': 'auto'},
             headers={'X-Api-Key': 'Gv8Aur8wRteDAhF6ri8MrXuv'},
         )
         if response.status_code == requests.codes.ok:
             name_file_image = (''.join(random.choice(string.ascii_letters) for i in range(8))) + '.png'
-            local_fold = 'media/' + name_file_image
+            local_fold = 'static/' + name_file_image
             with open(local_fold, 'wb') as out:
                 out.write(response.content)
         else:
