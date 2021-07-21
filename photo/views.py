@@ -115,7 +115,7 @@ def process_image(image_url):
     res = {'message':'tempo de execução', 'time':(time.time() - inicio)}
     return JsonResponse({
         "tempo de execução":res, 
-        "link": f'http://192.168.0.106:8001/media/{name_file_image}'
+        "link": f'http://167.99.54.80:8043/media/{name_file_image}'
     })
 
 def auto_rotate(path_original):
