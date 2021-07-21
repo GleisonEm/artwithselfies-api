@@ -10,12 +10,11 @@ class BaseMiddleware(object):
 
 class ProcessViewNoneMiddleware(BaseMiddleware):
     def process_view(self, request, view_func, view_args, view_kwargs):
-        print(request.headers.get('Authorization-Token'))
+        print(view_func.__name__)
         myapps = [
             'version1-teste'
         ]
 
         if (not request.headers.get('Authorization-Token') in myapps):
-            print('entreii aq uploads')
             return JsonResponse({'message': 'sai fora ladrao'}, status=401)
         return None
